@@ -26,7 +26,7 @@ def heapify(E, i, n):
 
 def heapSort(G, E):
 	for v in range(0, V):
-		for n in G.neighbor(v):
+		for n in G.findNeighbor(v):
 			if (n.dst >= v):
 				E.append(Edge(v, n.dst, n.bw))
 
@@ -42,7 +42,7 @@ def DFS(G, s, t, status, parent, BW):
 	if s == t:
 		return
 	status[s] = 1
-	for v in G.neighbor(s):
+	for v in G.findNeighbor(s):
 		if status[v.dst] == 2:
 			BW[v.dst] = min(BW[s], v.bw)
 			parent[v.dst] = s
