@@ -2,13 +2,13 @@ V = 5000
 
 class MakeUnionFind:
 	def __init__(self):
-		self.parent = [i for i in range(0,V)]
 		self.rank = [1 for i in range(0,V)]
+		self.parent = [i for i in range(0,V)]
 		self.max_size = V
 	
 	def __init__(self, size):
-		self.parent = [i for i in range(0,V)]
 		self.rank = [1 for i in range(0,V)]
+		self.parent = [i for i in range(0,V)]
 		self.max_size = size
 
 	def Make(self, i):
