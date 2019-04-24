@@ -16,7 +16,7 @@ class Graph:
 	def __init__(self):
 		self.graph = defaultdict(list)
 
-	def neighbor(self, u):
+	def findNeighbor(self, u):
 		return self.graph[u]
 
 	def addEdge(self, u, v, bw):
@@ -49,13 +49,7 @@ class Graph:
 				if (v_rand != i) and self.exists(i, v_rand) == False and len(self.graph[v_rand]) < deg:
 					w = random.randint(1, 1000)
 					self.addEdge(i, v_rand, w)
-					self.addEdge(i, v_rand, w)
-
-	def printG(self):
-		for i in range(len(self.graph)):
-			for j in self.graph[i]:
-				print(j.dst, " = ", j.bw)
-			print("\n")
+					self.addEdge(v_rand, i, w)
 
 
 
